@@ -21,7 +21,7 @@ export default function About() {
             i !== 2423600059
           ) {
             let res = await axios.post(
-              "http://127.0.0.1/tribone-api/getDikti.php",
+              "/getDikti.php",
               {
                 data: i,
               },

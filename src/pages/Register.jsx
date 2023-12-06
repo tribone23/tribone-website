@@ -86,7 +86,7 @@ const Login = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://127.0.0.1/tribone-api/getDikti.php",
+        "/getDikti.php",
         { data: nrp },
       );
       let nama;

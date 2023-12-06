@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import RequireAuth from "./hooks/RequireAuth";
-import HasLogged from "./hooks/hasLogged";
+import HasLogged from "./hooks/HasLogged";
 import Redirect from "./pages/Redirect";
 import Kas from "./components/dashboard/Kas";
 import { Setting } from "./components/dashboard/Setting";
@@ -17,7 +17,7 @@ import Jadwal from "./components/dashboard/Jadwal";
 
 import axios from "axios";
 
-axios.defaults.baseURL = import.meta.env.API_BASE_URL || "http://127.0.0.1/tribone-api";
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost/tribone-api";
 
 function App() {
   return (
