@@ -25,7 +25,7 @@ VITE_API_BASE_URL = .....(cont. http://127.0.0.1/tribone-api)
 
 atau sesuaikan pada file *App.jsx*
 ```
-axios.defaults.baseURL = process.env.VITE_API_BASE_URL || "http://127.0.0.1/tribone-api";
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost/tribone-api";
 ```
 
 Jalankan development server
