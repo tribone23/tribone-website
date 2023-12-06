@@ -17,7 +17,7 @@ import Jadwal from "./components/dashboard/Jadwal";
 
 import axios from "axios";
 
-axios.defaults.baseURL = "http://127.0.0.1/tribone-api";
+axios.defaults.baseURL = process.env.API_BASE_URL || "http://127.0.0.1/tribone-api";
 
 function App() {
   return (

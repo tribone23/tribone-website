@@ -18,9 +18,9 @@ Silahkan clone repository ke local
 git clone https://github.com/tribone23/tribone.git
 ```
 
-Sesuaikan URL API pada file *App.jsx*
+Sesuaikan URL API pada environment variable `API_BASE_URL` atau sesuaikan pada file *App.jsx*
 ```
-axios.defaults.baseURL = "http://127.0.0.1/tribone-api";
+axios.defaults.baseURL = process.env.API_BASE_URL || "http://127.0.0.1/tribone-api";
 ```
 
 Jalankan development server
