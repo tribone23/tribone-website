@@ -15,7 +15,7 @@ Github repository untuk rest api backend dapat diakses di [https://github.com/tr
 
 Silahkan clone repository ke local 
 ```
-git clone https://github.com/tribone23/tribone.git
+git clone https://github.com/tribone23/tribone-website.git
 ```
 
 Sesuaikan URL API pada environment variable `API_BASE_URL` atau sesuaikan pada file *App.jsx*
@@ -30,10 +30,6 @@ npm install
 npm run dev
 ```
 
-`Build untuk Production`
-```
-npm run build
-```
 ### 👋 Contributing
 
  *Feel free to contribute to this project*
