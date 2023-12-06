@@ -1,0 +1,207 @@
+/** @format */
+#img-home {
+  -webkit-animation: mover 2s infinite alternate;
+  animation: mover 2s infinite alternate;
+}
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .rowcol {
+    width: auto;
+    height: 500px;
+    margin: 200px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .rowcol {
+    width: auto;
+    height: 500px;
+    margin: 200px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .rowcol {
+    width: auto;
+    height: 500px;
+    margin: 200px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .rowcol {
+    width: auto;
+    height: 500px;
+    margin: 200px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .rowcol {
+    width: auto;
+    height: 500px;
+    margin: 200px;
+  }
+}
+
+.type h1 {
+  color: aqua;
+  /* overflow: hidden; Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation:
+    typing 3.5s,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.gradient-text {
+  background-color: rgb(54, 139, 191);
+  background-image: linear-gradient(45deg, #4e11dd, #a6f5c4);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.gradient-text2 {
+  background-color: #36afbf;
+  background-image: linear-gradient(45deg, #5e36bf, #f5a6b6);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.gradient-text-desc {
+  background-color: #5e36bf;
+  background-image: linear-gradient(45deg, #cabfc5, #f5a6b6);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.typing-effect {
+  border-right: 3px solid;
+  font-family: "Montserrat", sans-serif;
+  /* font-size: 2em; */
+  letter-spacing: 3px;
+  font-weight: bold;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    typing 3.5s,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typin {
+  from {
+    width: 0;
+  }
+}
+
+.fade-effect {
+  animation: fadeEffect ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.fade-effect h1 {
+  font-size: 10vw;
+}
+
+@keyframes fadeEffect {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#scrollinfo {
+  color: #0077b6;
+}
+
+.animate-character {
+  font-family: "Montserrat", sans-serif;
+  /* text-transform: uppercase; */
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #0035a7 29%,
+    #3e5af8 67%,
+    #470d7b 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

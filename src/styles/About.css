@@ -1,0 +1,157 @@
+/** @format */
+
+:root {
+  --orange: rgb(44, 43, 46);
+  --darkorange: #0004ff;
+  --platinum: #e5e5e5;
+  --black: #2b2d42;
+  --white: rgb(0, 174, 255);
+  --thumb: rgb(0, 74, 117);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font:
+    16px / 24px "Rubik",
+    sans-serif;
+  color: var(--black);
+  background: var(--platinum);
+  margin: 50px 0;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 1em;
+}
+
+.cards {
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-column-gap: 10px;
+  grid-auto-flow: column;
+  padding: 25px 0px;
+  list-style: none;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  scroll-snap-align: start;
+  transition: all 0.2s;
+}
+
+/* .card:hover {
+  color: var(--white);
+  background: var(--orange);
+} */
+
+.card .card-title {
+  font-size: 20px;
+}
+
+.card .card-content {
+  margin: 20px 0;
+  max-width: 85%;
+}
+
+.card .card-link-wrapper {
+  margin-top: auto;
+}
+
+.card .card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: var(--orange);
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.card:hover .card-link {
+  background: var(--darkorange);
+}
+
+.cards::-webkit-scrollbar {
+  height: 12px;
+}
+
+.cards::-webkit-scrollbar-thumb,
+.cards::-webkit-scrollbar-track {
+  border-radius: 92px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background: var(--darkorange);
+}
+
+.cards::-webkit-scrollbar-track {
+  background: var(--thumb);
+}
+
+@media (min-width: 500px) {
+  .cards {
+    grid-auto-columns: calc(50% - 10px);
+    grid-column-gap: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-auto-columns: calc(calc(100% / 3) - 20px);
+    grid-column-gap: 30px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .cards {
+    grid-auto-columns: calc(25% - 30px);
+    grid-column-gap: 40px;
+  }
+}
+
+.animate-character {
+  font-family: "Montserrat", sans-serif;
+  /* text-transform: uppercase; */
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #0035a7 29%,
+    #3e5af8 67%,
+    #470d7b 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

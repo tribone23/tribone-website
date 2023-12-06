@@ -1,0 +1,192 @@
+/** @format */
+#animate-img {
+  width: 1010.89;
+  height: 727.284;
+  -webkit-animation: mover 2s infinite alternate;
+  animation:
+    fadeEffect ease 5s,
+    mover 2s infinite alternate;
+}
+
+#effect-img {
+  width: 80%;
+  height: 80%;
+  -webkit-animation: mover 2s infinite alternate;
+  animation:
+    fadeEffect ease 5s,
+    mover 2s infinite alternate;
+}
+
+@keyframes fadeEffect {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50px);
+  }
+}
+
+.nrp-info {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.animate-character {
+  font-family: "Montserrat", sans-serif;
+  /* text-transform: uppercase; */
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #0035a7 29%,
+    #3e5af8 67%,
+    #470d7b 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.gradient-nrp-info {
+  background-color: #5e36bf;
+  background-image: linear-gradient(45deg, #5e36bf, #f5a6b6);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.login-info {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+.animate-character {
+  font-family: "Montserrat", sans-serif;
+  /* text-transform: uppercase; */
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #0035a7 29%,
+    #3e5af8 67%,
+    #470d7b 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.register-info {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.animate-character {
+  font-family: "Montserrat", sans-serif;
+  /* text-transform: uppercase; */
+  background-image: linear-gradient(
+    -225deg,
+    #ffffff 0%,
+    #0035a7 29%,
+    #3e5af8 67%,
+    #470d7b 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.typing-effect {
+  border-right: 3px solid;
+  /* font-size: 2em; */
+  letter-spacing: 3px;
+  font-weight: bold;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    typing 3.5s,
+    blink-caret 0.75s step-end,
+    textclip 2s linear infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: orange;
+  }
+}

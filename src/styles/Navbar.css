@@ -1,0 +1,22 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.navbar {
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav-link:hover {
+  color: white !important;
+}
+
+.navTitle {
+  font-weight: bold;
+  font-size: 2em !important;
+}
+
+.nav-color {
+  opacity: 0.8;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}

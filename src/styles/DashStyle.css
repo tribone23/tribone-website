@@ -1,0 +1,22 @@
+.dark-primary {
+  background-image: radial-gradient(
+    circle,
+    #051937,
+    #001a2a,
+    #001618,
+    #000f07,
+    #030402
+  );
+}
+
+.dark-secondary {
+  background-color: #272640;
+}
+
+.dark-side {
+  background-color: #212f45;
+}
+
+.font-primary {
+  color: #828690;
+}

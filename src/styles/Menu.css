@@ -1,0 +1,20 @@
+/** @format */
+
+* {
+  font-family: "Poppins", sans-serif;
+  /* color: #ffffff; */
+}
+
+:root {
+  --primary-color: #ffffff;
+  --color-text: #ffffff;
+}
+
+#offcanvasScrolling {
+  transition: 0.1s;
+}
+#menu,
+#search {
+  transition: margin-left 0.3s;
+  color: #ffffff;
+}
