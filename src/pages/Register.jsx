@@ -1,11 +1,11 @@
 /** @format */
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import "../styles/Register.css";
-import { Col, Row, Container, Form, Button } from "react-bootstrap";
+import {Col, Row, Container, Form, Button} from "react-bootstrap";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
-import { ColorRing } from "react-loader-spinner";
-import { Dna } from "react-loader-spinner";
+import {Navigate} from "react-router-dom";
+import {ColorRing} from "react-loader-spinner";
+import {Dna} from "react-loader-spinner";
 import regVector from "../assets/register-vector.svg";
 import regVector2 from "../assets/registervector2.png";
 import loginVector from "../assets/login-vector.svg";
@@ -69,26 +69,18 @@ const Login = () => {
 
     const triOnly = false;
 
-    if (!triOnly) {
+    if (nrp >= 2423600031 && nrp <= 2423600060) {
       setTri(true);
       handleNRPSubmit();
     } else {
-      if (nrp >= 2423600031 && nrp <= 2423600060) {
-        setTri(true);
-        handleNRPSubmit();
-      } else {
-        setTri(false);
-        setStep(2);
-      }
+      setTri(false);
+      setStep(2);
     }
   };
   const handleNRPSubmit = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(
-        "/getDikti.php",
-        { data: nrp },
-      );
+      const response = await axios.post("/getDikti.php", {data: nrp});
       let nama;
 
       const data = response.data.mahasiswa[0].text.split(",");
@@ -122,15 +114,12 @@ const Login = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post(
-        "/register.php",
-        {
-          nrp: nrp,
-          nama: nama,
-          email: email,
-          password: password,
-        },
-      );
+      const response = await axios.post("/register.php", {
+        nrp: nrp,
+        nama: nama,
+        email: email,
+        password: password,
+      });
 
       if (response.data.status == 200) {
         setRegister(response.data.message);
@@ -146,74 +135,68 @@ const Login = () => {
   return (
     <>
       <Navbarback />
-      <Container className="mt-5">
+      <Container className='mt-5'>
         <Row
-          style={{ marginTop: "100px" }}
-          className="d-flex align-items-center justify-content-center h-100 md-5"
+          style={{marginTop: "100px"}}
+          className='d-flex align-items-center justify-content-center h-100 md-5'
         >
-          <Col className="col-md-8 col-lg-7 col-xl-6">
+          <Col className='col-md-8 col-lg-7 col-xl-6'>
             {imageSlide === 1 && (
               <img
-                className="img-fluid fade-effect"
-                id="animate-img"
+                className='img-fluid fade-effect'
+                id='animate-img'
                 src={loginVector}
-                alt=""
+                alt=''
               />
             )}
             {imageSlide === 2 && (
               <img
-                className="img-fluid effect-img fade-effect"
-                id="effect-img"
+                className='img-fluid effect-img fade-effect'
+                id='effect-img'
                 src={regVector}
-                alt=""
+                alt=''
               />
             )}
             {imageSlide === 3 && (
               <img
-                className="img-fluid effect-img fade-effect"
-                id="effect-img"
+                className='img-fluid effect-img fade-effect'
+                id='effect-img'
                 src={regVector2}
-                alt=""
+                alt=''
               />
             )}
           </Col>
-          <Col className="col-md-8 col-lg-7 col-xl-6">
+          <Col className='col-md-8 col-lg-7 col-xl-6'>
             {step === 1 && (
               <Form>
-                <h1 className="mb-4 typing-effect animate-character nrp-info">
-                  Enter your NRP
-                </h1>
-                {error !== "" ? (
-                  <div className="text-danger">{error}</div>
-                ) : (
-                  <h2 className="lead mb-3 nrp-info">{""}</h2>
-                )}
+                <h1 className='mb-4 typing-effect animate-character nrp-info'>Enter your NRP</h1>
+                {error !== "" ? <div className='text-danger'>{error}</div> : <h2 className='lead mb-3 nrp-info'>{""}</h2>}
 
-                <div className="form-outline mb-4 fade-effect">
+                <div className='form-outline mb-4 fade-effect'>
                   <Form.Control
-                    type="number"
-                    placeholder="Your NRP (e.g. 24236000xx)"
-                    name="NRP"
+                    type='number'
+                    placeholder='Your NRP (e.g. 24236000xx)'
+                    name='NRP'
                     onChange={(e) => handleChange(e, "NRP")}
                     value={nrp}
                   />
                 </div>
-                <div className="d-grid gap-2 fade-effect">
+                <div className='d-grid gap-2 fade-effect'>
                   <Button
-                    type="submit"
-                    variant="primary"
-                    size="lg"
+                    type='submit'
+                    variant='primary'
+                    size='lg'
                     onClick={cekNrp}
                   >
                     {loading ? (
                       <>
                         <Dna
                           visible={true}
-                          height="40"
-                          width="40"
-                          ariaLabel="dna-loading"
+                          height='40'
+                          width='40'
+                          ariaLabel='dna-loading'
                           wrapperStyle={{}}
-                          wrapperClass="dna-wrapper"
+                          wrapperClass='dna-wrapper'
                         />
                       </>
                     ) : (
@@ -224,32 +207,32 @@ const Login = () => {
               </Form>
             )}
             {step === 2 && (
-              <div className="fade-effect">
-                <h2 className="mb-4" style={{ color: "white" }}>
+              <div className='fade-effect'>
+                <h2
+                  className='mb-4'
+                  style={{color: "white"}}
+                >
                   {tri ? (
                     <>
-                      Apakah nama anda<br></br>{" "}
-                      <span className="mt-3 animate-character typing-effect register-info">
-                        {nama}
-                      </span>
+                      Apakah nama anda<br></br> <span className='mt-3 animate-character typing-effect register-info'>{nama}</span>
                     </>
                   ) : (
-                    <>Maaf, anda bukan mahasiswa TRI</>
+                    <>Maaf, anda bukan mahasiswa TRI B</>
                   )}
                 </h2>
-                <div className="d-grid gap-2">
+                <div className='d-grid gap-2'>
                   {tri ? (
                     <>
                       <Button
-                        variant="primary"
-                        size="lg"
+                        variant='primary'
+                        size='lg'
                         onClick={() => handleConfirmation("IYA")}
                       >
                         Continue Registration
                       </Button>
                       <Button
-                        variant="primary"
-                        size="lg"
+                        variant='primary'
+                        size='lg'
                         onClick={() => handleConfirmation("TIDAK")}
                       >
                         Cancel
@@ -258,8 +241,8 @@ const Login = () => {
                   ) : (
                     <>
                       <Button
-                        variant="primary"
-                        size="lg"
+                        variant='primary'
+                        size='lg'
                         onClick={() => handleConfirmation("TIDAK")}
                       >
                         Back
@@ -271,65 +254,66 @@ const Login = () => {
             )}
             {step === 3 && (
               <Form>
-                <div className="form-outline mb-4 fade-effect">
+                <div className='form-outline mb-4 fade-effect'>
                   <h2
-                    className="mb-4 animate-character"
-                    style={{ color: "white" }}
+                    className='mb-4 animate-character'
+                    style={{color: "white"}}
                   >
                     Satu langkah lagi..
                   </h2>
                   {error !== "" ? (
-                    <h5 className="text-danger">{error}</h5>
+                    <h5 className='text-danger'>{error}</h5>
                   ) : (
-                    <h5 className="mb-4" style={{ color: "white" }}>
+                    <h5
+                      className='mb-4'
+                      style={{color: "white"}}
+                    >
                       Masukkan Email dan buat Password
                     </h5>
                   )}
 
                   <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    name="email"
+                    type='email'
+                    placeholder='Enter email'
+                    name='email'
                     onChange={(e) => handleChangeRegister(e, "email")}
                     value={email}
-                    className="mt-3"
+                    className='mt-3'
                   />
                   <Form.Control
                     type={boxcek}
-                    placeholder="password"
-                    name="password"
-                    id="password"
+                    placeholder='password'
+                    name='password'
+                    id='password'
                     onChange={(e) => handleChangeRegister(e, "password")}
                     value={password}
-                    className="mt-3"
+                    className='mt-3'
                     // Tambahkan fungsi onChange jika diperlukan
                   />
                   <Form.Check // prettier-ignore
-                    type="checkbox"
-                    id="ShowPassword"
-                    label="Show Password"
+                    type='checkbox'
+                    id='ShowPassword'
+                    label='Show Password'
                     onClick={handleChangeBox}
-                    className="mt-3"
+                    className='mt-3'
                   />
                 </div>
-                <div className="d-grid gap-2 fade-effect">
-                  <Button variant="primary" size="lg" onClick={handleRegister}>
+                <div className='d-grid gap-2 fade-effect'>
+                  <Button
+                    variant='primary'
+                    size='lg'
+                    onClick={handleRegister}
+                  >
                     {loading ? (
                       <>
                         <ColorRing
                           visible={true}
-                          height="40"
-                          width="40"
-                          ariaLabel="blocks-loading"
+                          height='40'
+                          width='40'
+                          ariaLabel='blocks-loading'
                           wrapperStyle={{}}
-                          wrapperClass="blocks-wrapper"
-                          colors={[
-                            "#e15b64",
-                            "#f47e60",
-                            "#f8b26a",
-                            "#abbd81",
-                            "#849b87",
-                          ]}
+                          wrapperClass='blocks-wrapper'
+                          colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
                         />
                       </>
                     ) : (
@@ -338,24 +322,28 @@ const Login = () => {
                   </Button>
                 </div>
                 {register && (
-                  <Navigate to="/login" state={register} replace={true} />
+                  <Navigate
+                    to='/login'
+                    state={register}
+                    replace={true}
+                  />
                 )}
               </Form>
             )}
             {step === 4 && (
               <div>
-                <h2 style={{ color: "white" }}>APAKAH INI data kamu {nrp} ?</h2>
-                <div className="d-grid gap-2">
+                <h2 style={{color: "white"}}>APAKAH INI data kamu {nrp} ?</h2>
+                <div className='d-grid gap-2'>
                   <Button
-                    variant="primary"
-                    size="lg"
+                    variant='primary'
+                    size='lg'
                     onClick={() => handleConfirmation("IYA")}
                   >
                     IYA
                   </Button>
                   <Button
-                    variant="primary"
-                    size="lg"
+                    variant='primary'
+                    size='lg'
                     onClick={() => handleConfirmation("TIDAK")}
                   >
                     TIDAK
