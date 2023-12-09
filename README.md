@@ -5,7 +5,7 @@ Website Portal Mahasiswa Teknologi Rekayasa Internet PENS 2023 build with ReactJ
 ![Tribone Portal](https://i.ibb.co/yh1YCMt/image.png)
 
 ## 🐧 Live Site
-_as soon as possible_
+[https://www.tribone.my.id](https://www.tribone.my.id)
 
 ## 🕷️ Deployment
 ### `Backend`
