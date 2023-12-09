@@ -2,8 +2,7 @@
 import {useState, useEffect} from "react";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {fetchUserData} from "../../hooks/AuthUser";
-import logoki from "../../src/assets/logo.png";
-
+import logoki from "../../../src/assets/logo.png";
 function Menu() {
   const [nrp, setNrp] = useState("");
   const [name, setName] = useState("");

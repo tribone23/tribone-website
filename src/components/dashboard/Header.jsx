@@ -1,6 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import {logoutUser} from "../../hooks/AuthUser";
-import logoki from "../logo.png";
+import logoki from "../../../src/assets/logo.png";
 
 function Header() {
   const navigate = useNavigate();
