@@ -44,34 +44,6 @@ export default function About() {
     // console.log(array);
   }, []);
 
-  const listItems = array.map((nama) => (
-    <li
-      className='card'
-      key={nama.toString()}
-    >
-      <div>
-        <h3 className='card-title'>ANGGOTA TRIBONE.</h3>
-        <div className='card-content'>
-          <img
-            height={"150px"}
-            width={"150px"}
-            src={semuanya}
-            alt=''
-          />
-          <p className='text-ccenter'>{nama}</p>
-        </div>
-      </div>
-      <div className='card-link-wrapper'>
-        <a
-          href=''
-          className='card-link'
-        >
-          Learn More
-        </a>
-      </div>
-    </li>
-  ));
-
   return (
     <>
       <section
@@ -238,7 +210,35 @@ export default function About() {
               ANGGOTA TRIBONE
             </h2>
 
-            <ul className='cards'>{listItems}</ul>
+            <ul className='cards'>
+              {array.map((nama, anu) => (
+                <li
+                  className='card'
+                  key={anu}
+                >
+                  <div>
+                    <h3 className='card-title'>ANGGOTA TRIBONE.</h3>
+                    <div className='card-content'>
+                      <img
+                        height={"150px"}
+                        width={"150px"}
+                        src={semuanya}
+                        alt=''
+                      />
+                      <p className='text-ccenter'>{nama}</p>
+                    </div>
+                  </div>
+                  <div className='card-link-wrapper'>
+                    <a
+                      href=''
+                      className='card-link'
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
