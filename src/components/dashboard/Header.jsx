@@ -14,7 +14,7 @@ function Header() {
     <div className='header dark-primary'>
       <div className='menu-toggle-btn'>
         <a href='#'>
-          <i className='bi bi-list' />
+          <i className=' text-white bi bi-list' />
         </a>
       </div>
 
