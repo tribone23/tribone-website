@@ -91,7 +91,7 @@ function App() {
           element={<Redirect />}
         ></Route>
         <Route
-          path='/short'
+          path='/shortlinks'
           element={<Short />}
         />
         <Route

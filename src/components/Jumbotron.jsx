@@ -47,6 +47,12 @@ export default function Jumbotron() {
               >
                 Picket
               </a>
+              <a
+                className='btn btn-outline-danger m-2 fade-effect'
+                href='/shortlinks'
+              >
+                SHORTLINK
+              </a>
             </Col>
 
             <Col

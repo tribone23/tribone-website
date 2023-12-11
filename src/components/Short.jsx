@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import {refid, db} from "../firebase";
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import validator from "validator";
 export default function Short() {
   const [input, setInput] = useState();
   const [short, setShort] = useState();
@@ -12,15 +13,29 @@ export default function Short() {
       position: toast.POSITION.TOP_CENTER,
     });
   };
+  const UrlSalah = () => {
+    toast.error("enter valid url", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
 
   const handleDb = async () => {
+    let valid = input;
     const id = refid(7);
-    console.log(id);
-    await db.collection("urls").add({
-      url: input,
-      id: id,
-    });
-    setShort(`${window.location.origin}/${id}`);
+
+    if (!valid == "" && !valid.match(/^https?:\/\//i)) {
+      valid = "https://" + valid;
+    }
+    if (validator.isURL(valid)) {
+      await db.collection("urls").add({
+        url: valid,
+        id: id,
+      });
+
+      setShort(`${window.location.origin}/${id}`);
+    } else {
+      UrlSalah();
+    }
   };
 
   return (
@@ -49,7 +64,7 @@ export default function Short() {
               type='url'
               // value={input}
               placeholder='MASUKAN URL'
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(e) => setInput(e.target.value.trim())}
             />
             <button
               className='btn btn-primary m-5'
