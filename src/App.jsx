@@ -14,7 +14,8 @@ import Redirect from "./pages/Redirect";
 import Kas from "./components/dashboard/Kas";
 import {Setting} from "./components/dashboard/Setting";
 import Jadwal from "./components/dashboard/Jadwal";
-
+import Short from "./components/Short";
+import Linkshort from "./components/Linkshort";
 import axios from "axios";
 
 axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || "https://budisantoso.serv00.net";
@@ -89,6 +90,14 @@ function App() {
           path='/*'
           element={<Redirect />}
         ></Route>
+        <Route
+          path='/short'
+          element={<Short />}
+        />
+        <Route
+          path='/:id'
+          element={<Linkshort />}
+        />
       </Routes>
     </>
   );
