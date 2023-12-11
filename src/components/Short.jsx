@@ -1,10 +1,18 @@
 import {Row, Col, Container} from "react-bootstrap";
 import {useState, useEffect} from "react";
 import {refid, db} from "../firebase";
+import {ToastContainer, toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Short() {
   const [input, setInput] = useState();
   const [short, setShort] = useState();
-  console.log(input);
+
+  const showToastMessage = () => {
+    toast.success("Copied Successfully", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
+
   const handleDb = async () => {
     const id = refid(7);
     console.log(id);
@@ -27,7 +35,9 @@ export default function Short() {
                 type='url'
                 value={short}
                 readOnly
-                onClick={async () => await navigator.clipboard.writeText(short)}
+                onClick={async () => {
+                  await navigator.clipboard.writeText(short), showToastMessage();
+                }}
               />
             </Col>
           </Row>
@@ -50,6 +60,7 @@ export default function Short() {
             </button>
           </Col>
         </Row>
+        <ToastContainer />
       </Container>
     </>
   );
