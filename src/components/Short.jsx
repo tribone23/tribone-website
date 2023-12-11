@@ -26,7 +26,8 @@ export default function Short() {
                 className='form-control'
                 type='url'
                 value={short}
-                disabled
+                readOnly
+                onClick={async () => await navigator.clipboard.writeText(short)}
               />
             </Col>
           </Row>
