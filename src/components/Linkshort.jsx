@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import {db} from "../firebase";
 export default function Linkshort() {
   const {id} = useParams();
+  console.log(id);
   useEffect(() => {
     setTimeout(() => {
       let query = db.collection("urls").where("id", "==", id);
@@ -18,7 +19,7 @@ export default function Linkshort() {
     <>
       <Container className='mt-5'>
         <Row
-          style={{marginTop: "100px"}}
+          style={{marginTop: "25%"}}
           className='d-flex align-items-center justify-content-center h-100 md-5'
         >
           <Col className='col-md-7 col-lg-5 col-xl-5 offset-xl-1'>
