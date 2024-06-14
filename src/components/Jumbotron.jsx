@@ -48,10 +48,16 @@ export default function Jumbotron() {
                 Picket
               </a>
               <a
-                className='btn btn-outline-danger m-2 fade-effect'
+                className='btn btn-outline-success m-2 fade-effect'
                 href='/shortlinks'
               >
-                SHORTLINK
+                Shortlink
+              </a>
+              <a
+                className='btn btn-outline-danger m-2 fade-effect'
+                href='https://ctf.tribone.my.id'
+              >
+                CTF
               </a>
             </Col>
 
